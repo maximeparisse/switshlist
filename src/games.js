@@ -227,7 +227,7 @@ export default [
   {
     "name": "The Binding of Isaac: Afterbirth+",
     "date": 1489705200000,
-    "status": "will"
+    "status": "owned"
   },
   {
     "name": "Blacksad: Under the Skin",
@@ -247,7 +247,7 @@ export default [
   {
     "name": "Bloodstained: Ritual of the Night",
     "date": 1561413600000,
-    "status": "will"
+    "status": "owned"
   },
   {
     "name": "Bomber Crew: Complete Edition",
@@ -447,7 +447,7 @@ export default [
   {
     "name": "Darkest Dungeon: Ancestral Edition",
     "date": 1524520800000,
-    "status": "will"
+    "status": "owned"
   },
   {
     "name": "Darksiders II: Deathinitive Edition",
@@ -947,7 +947,7 @@ export default [
   {
     "name": "Hollow Knight",
     "date": null,
-    "status": "will"
+    "status": "owned"
   },
   {
     "name": "Horizon Chase Turbo",
@@ -1352,7 +1352,7 @@ export default [
   {
     "name": "Moonlighter",
     "date": 1541718000000,
-    "status": "will"
+    "status": "owned"
   },
   {
     "name": "Mortal Kombat 11",
