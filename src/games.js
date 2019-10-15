@@ -2367,7 +2367,7 @@ export default [
   {
     "name": "Undertale",
     "date": null,
-    "status": "want"
+    "status": "impossible"
   },
   {
     "name": "Undertale: Collectors Edition",

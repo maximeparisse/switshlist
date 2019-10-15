@@ -10,14 +10,20 @@
       <button @click="changeStatus('later')">Later</button>
     </div>
 
+    <div class="count">
+      {{ owned }}/{{ total }} (owned/total)
+    </div>
+
     <table>
       <tr>
+        <th>Index</th>
         <th>Name</th>
         <th>Date</th>
       </tr>
-      <tr v-for="game in games"
+      <tr v-for="(game, index) in games"
           v-bind:key="game.name"
           :class="game.status">
+        <td>{{ index + 1 }}</td>
         <td>{{ game.name }}</td>
         <td>{{ game.date | moment('YYYY-MM-DD') }}</td>
       </tr>
@@ -43,6 +49,12 @@ export default {
         return this.$store.state.games.filter(f => f.status === this.status);
       }
     },
+    total() {
+      return this.$store.state.games.length;
+    },
+    owned() {
+      return this.$store.state.games.filter(f => f.status === 'owned').length;
+    },
   },
   methods: {
     changeStatus(status) {
@@ -62,7 +74,13 @@ export default {
   margin-bottom: 60px;
 }
 
+.count {
+  font-weight: 700;
+  text-align: right;
+}
+
 table {
+  margin-top: 20px;
   text-align: left;
 }
 
@@ -71,7 +89,13 @@ tr {
 }
 
 td:first-child {
+  width: 20px;
+  flex-shrink: 0;
+}
+
+td:nth-child(2) {
   flex-grow: 1;
+  margin-left: 20px;
 }
 
 td:last-child {
@@ -83,15 +107,18 @@ td:last-child {
 .filters {
   position: fixed;
   display: flex;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 40px;
-  border-top: 1px solid black;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 50%;
+  right: 0;
+  border: 1px solid black;
+  border-right: 0;
+  transform: translateY(-50%);
 }
 
 .filters button {
-  width: calc(100% / 6);
+  width: 40px; 
+  height: 40px;
   border: 0;
   margin: 0;
   padding: 10px;
@@ -101,14 +128,13 @@ td:last-child {
   text-overflow: ellipsis;
   font-size: 10px;
   line-height: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 10px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .filters button + button {
-  border-left: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .owned {
