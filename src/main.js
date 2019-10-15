@@ -7,6 +7,8 @@ import games from './games'
 
 Vue.use(Vuex)
 
+Vue.use(require('vue-moment'));
+
 const store = new Vuex.Store({
   state: {
     games,
